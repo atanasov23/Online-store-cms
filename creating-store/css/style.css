@@ -1,0 +1,41 @@
+body,
+p,
+input {
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: #f1f1f1;
+}
+
+.create {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    margin-left: 7em;
+    margin-right: 7em;
+    margin-top: 10em;
+    align-items: center;
+    text-align: center;
+}
+
+input {
+    margin-top: 1em;
+    outline: none;
+    border: 1px solid;
+    border-color: rgb(209, 204, 204);
+}
+
+button {
+    background-color: #ff3300;
+    color: white;
+    border: 1px solid;
+    border-color: rgb(209, 204, 204);
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
