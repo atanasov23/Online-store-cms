@@ -21,9 +21,12 @@ require_once 'cms/config/db-config/db_connect.php';
 </head>
 
 <body>
-    <?php
-    require_once 'cms\templates\main\header.php';
-    ?>
+    <div class="main">
+        <?php
+        require_once 'cms\templates\main\header.php';
+        require_once 'cms\templates\main\footer.php';
+        ?>
+    </div>
 </body>
 
 </html>

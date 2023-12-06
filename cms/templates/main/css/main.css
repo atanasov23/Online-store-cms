@@ -3,9 +3,24 @@
 @import url('./footer.css');
 @import url('./navigation.css');
 
-* { 
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
+a {
+    text-decoration: none;
+    color: #474646;
+}
+
+li {
+    list-style: none;
+}
+
+.main {
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 1em;
+}
