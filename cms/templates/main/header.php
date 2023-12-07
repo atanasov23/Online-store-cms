@@ -42,7 +42,7 @@
                 <div class="mobile-menu" id="mobile-menu">
                     <a href="">
                         <i class="fa fa-bars 1" aria-hidden="true"></i>
-                        <strong>Меню</strong>
+                        <p>Меню</p>
                     </a>
                 </div>
             </div>
@@ -50,7 +50,7 @@
             <div class="search-box">
                 <a href="" id="search">
                     <i class="fa fa-search fa-1x" aria-hidden="true"></i>
-                    <strong>Търсене</strong>
+                    <p>Търсене</p>
                 </a>
                 <form action="/search.php" class="search-form" id="search-form">
                     <div class="field-box">

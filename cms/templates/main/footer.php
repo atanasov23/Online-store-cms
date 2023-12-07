@@ -38,6 +38,6 @@
         <div class="copy-text">
             <span class="copy-ft">Copyright © 2023. All Rights Reserved</span>
         </div>
-        
+
     </div>
 </footer>
