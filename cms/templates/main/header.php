@@ -36,50 +36,54 @@
         </div>
 
         <div class="header-menu">
-
             <div class="menu">
-
                 <div class="mobile-menu" id="mobile-menu">
-                    <a href="">
-                        <i class="fa fa-bars 1" aria-hidden="true"></i>
-                        <p>Меню</p>
+                    <a>
+                        <div class="container-menu">
+                            <div class="c-1"></div>
+                            <div class="c-2"></div>
+                            <div class="c-3"></div>
+                            <div>
+                                <p>Меню</p>
                     </a>
                 </div>
             </div>
-
             <div class="search-box">
-                <a href="" id="search">
-                    <i class="fa fa-search fa-1x" aria-hidden="true"></i>
-                    <p>Търсене</p>
-                </a>
                 <form action="/search.php" class="search-form" id="search-form">
                     <div class="field-box">
                         <input type="text" name="search" id="search-filed" class="text-field" placeholder="Търсене">
-                        <button><i class="fa fa-search fa-1x" aria-hidden="true"></i></button>
+                        <button><i class="fa fa-sharp fa-thin fa-magnifying-glass fa-sm"></i></button>
                     </div>
                 </form>
+                <a id="search-btn">
+                    <!-- <i class="fa-thin fa-x fa-xl"></i> -->
+                    <div class="toogle-search">
+                        <!-- <i class="fa fa-thin fa-magnifying-glass fa-xl"></i> -->
+                        <i class="fa fa-search fa-lg" aria-hidden="true"></i>
+                    </div>
+                    <p>Търсене</p>
+                </a>
             </div>
-
             <div id="cart-header" class="cart"> <a href="/shopping-cart.html" class="add-to-cart">
-                    <i class="fa fa-cart-plus 1 fa-2x" aria-hidden="true"></i>
+                    <i class="fa fa-thin fa-cart-shopping fa-lg"></i>
                     <em class="cart-sum">(0)</em>
                 </a>
-
             </div>
         </div>
+
     </div>
 
-    <nav>
-        <ul class="main-menu">
-            <?php
-            $query_select = 'select * from shop_nav_menu';
-            $result = mysqli_query($conn, $query_select);
-            while ($row = mysqli_fetch_assoc($result)) {
-                $li = $row['menu_content'];
-                print $li;
-            }
-            ?>
-        </ul>
-    </nav>
-
 </header>
+
+<nav>
+    <ul class="main-menu">
+        <?php
+        $query_select = 'select * from shop_nav_menu';
+        $result = mysqli_query($conn, $query_select);
+        while ($row = mysqli_fetch_assoc($result)) {
+            $li = $row['menu_content'];
+            print $li;
+        }
+        ?>
+    </ul>
+</nav>

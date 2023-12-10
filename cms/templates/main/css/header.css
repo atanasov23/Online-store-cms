@@ -10,13 +10,58 @@
 
 p {
     display: inline-block;
+    font-size: 15px;
+}
+
+.container-menu {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+}
+
+.c-1,
+.c-2,
+.c-3 {
+    width: 35px;
+    height: 1px;
+    background-color: #333;
+    transition: 0.4s;
+}
+
+.container-menu .c-1 {
+    margin-bottom: 0.5em;
+}
+
+.container-menu .c-2 {
+    margin-bottom: 0.5em;
+}
+
+.change .c-1 {
+    transform: translate(0, 9px) rotate(-45deg);
+}
+
+.change .c-2 {
+    opacity: 0;
+}
+
+.change .c-3 {
+    transform: translate(0, -9px) rotate(45deg);
+}
+
+.mobile-menu {
+    display: flex;
+    align-items: center;
+}
+
+.toogle-search {
+    display: inline-block;
 }
 
 .main-nav {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #dedede;
-    padding-bottom: 1em;
+    padding-bottom: 0.4em;
 }
 
 .head-contacts {
@@ -40,6 +85,7 @@ p {
 }
 
 .main-menu {
+    display: none;
     text-align: center;
     margin-top: 1em;
 }
@@ -50,12 +96,13 @@ p {
 
 .search-form {
     display: inline-block;
-    /* display: none; */
+    display: none;
 }
 
 .field-box input {
     border: 1px solid #e0e0e0;
-    width: 200px;
+    outline: none;
+    width: 250px;
     height: 38px;
 }
 
@@ -64,22 +111,7 @@ p {
     border: none;
 }
 
-
-/* @media screen and (max-width: 700px) {
-
-    .head-contacts,
-    .mobile-menu p,
-    .search-box a p {
-        display: none;
-    }
-
-    .field-box input {
-        display: inline-block;
-        width: 200px;
-    }
-} */
-
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
 
     .head-contacts,
     .mobile-menu p,
@@ -93,8 +125,9 @@ p {
 
     .field-box input {
         display: inline-block;
-        width: 220px;
+        width: 200px;
         height: 38px;
+        outline: none;
     }
 
     .field-box button {
@@ -114,12 +147,8 @@ p {
     }
 
     .search-form {
-        right: 72%;
+        right: 90%;
         top: 25%;
         position: absolute;
     }
-
-    /*   .mobile-menu a {
-        display: none;
-    } */
 }

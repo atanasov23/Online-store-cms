@@ -35,10 +35,6 @@
     font-size: 17px;
 }
 
-.phone-number p {
-    color: black;
-}
-
 .footer-contact ul {
     display: flex;
     flex-wrap: wrap;
