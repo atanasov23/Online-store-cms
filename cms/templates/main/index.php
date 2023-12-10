@@ -7,6 +7,10 @@ require_once 'cms/config/db-config/db_connect.php';
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Онлайн магазин за гоблени и гердани.  Бърза и сигурна доставка. Ниски цени. Поръчай сега." />
+	<meta property="og:title" content="Ръчно изработени гердани и гоблени! - Детелина и Вие | detelinaivie.com" />
+	<meta property="og:site_name" content="Ръчно изработени гердани и гоблени! - Детелина и Вие | detelinaivie.com" />
+	<meta property="og:description" content="Онлайн магазин за гоблени и гердани.  Бърза и сигурна доставка. Ниски цени. Поръчай сега." />
 	<link rel="stylesheet" href="cms/templates/main/css/main.css" />
 	<script src="https://kit.fontawesome.com/7f6d4e14e7.js" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

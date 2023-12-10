@@ -1,0 +1,76 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-link-mail {
+    color: #5da8ef;
+}
+
+.navBarTopmenu {
+    display: flex;
+    justify-content: flex-end;
+    height: 25px;
+    align-items: center;
+    font-size: 13px;
+}
+
+.navBarTopmenu ul li {
+    display: inline-block;
+    margin-right: 1em;
+}
+
+.nav-mainMenu {
+    background-color: #3a7bb9;
+}
+
+.navbar-collapse {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 2em;
+    padding-bottom: 1.7em;
+}
+
+.navbar-collapse ul {
+    display: flex;
+}
+
+.navbar-collapse ul li {
+    margin-right: 2em;
+}
+
+.navbar-collapse ul li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.navbar-collapse ul li a span {
+    margin-top: 1.5em;
+}
+
+.nav-preview-shop {
+    margin-right: 1.2em;
+}
+
+.nav-preview-shop a span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    color: white;
+}
