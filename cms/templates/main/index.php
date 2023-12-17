@@ -401,6 +401,6 @@ require_once 'cms/config/db-config/db_connect.php';
 	</div>
 </body>
 
-<script src="/cms/templates/main/js/main.js"></script>
+<script src="/cms/templates/main/js/main.js" type="module"></script>
 
 </html>

@@ -10,6 +10,15 @@
 
 </head>
 
+<?php
+if(isset($_POST)){
+    $data = file_get_contents("php://input");
+
+    $jsonData = json_decode($data);
+
+    echo $jsonData;
+}
+?>
 <body>
     <div class="main-container">
         <div class="header">
@@ -182,73 +191,61 @@
         </div>
     </div>
 
-    <section class="page-section">
-        <div class="dash-main-info">
-            <div class="container-info">
-                <div class="user-image">
-                    <span>D</span>
-                </div>
-                <div class="dash-user">
-                    <div class="greeting">
-                        Здравейте,
-                    </div>
-                    <h3 class="name active">
-                        <b class="font-name">
-                            detelina_shop@abv.bg
-                        </b>
-                    </h3>
-                    <a href="/cms/account/settings" class="user-profile-settings">Настройки на профила</a>
-                </div>
+    <div class="products-main-container">
+        <aside class="category-tree-wrapper " id="categoryTreeWrapper">
+            <h2 class="catalog-title">Категории</h2>
+            <div class="category-tree" id="categoryTree">
 
-                <div class="shop-info">
-                    <div class="col-sm-4">
-                        <div class="dash-user-status">
-                            <div class="stat">
-                                <div class="stat-info">
-                                    <span>Domain:</span>
-                                    <strong class="text-secondary fw-semibold">Свързан</strong>
-                                </div>
-                            </div>
-                            <div class="stat">
-                                <div class="stat-info">
-                                    <span>Статус:</span>
-                                    <strong class="text-secondary fw-semibold">Магазинът е активен</strong>
-                                </div>
-                                <div class="stat-action">
-                                    <a href="/cms/settings/basicNew">Промени статуса на магазина</a>
-                                </div>
-                            </div>
+                <ul class="sortable-list ui-sortable">
+                    <li class="cat-list-item">
+                        <div id="cat_0" class="link-wrapper " data-id="0">
+                            <a href="/cms/catalog/products?Id=0" class="category-link" title="Некатегоризирани продукти"><b>Некатегоризирани продукти</b></a>
                         </div>
-                    </div>
-                </div>
-            </div>
+                    </li>
 
-            <div class="col-sm-12 mt-4">
-                <a href="http://detelinaivie.com" target="_blank" class="btn btn-primary py-1 d-block rounded-0 view-shop">detelinaivie.com</a>
-            </div>
-        </div>
+                    <!--        <li id="cat_3" class="cat-list-item sortable-item ">
+                        <div class="link-wrapper  " data-id="3">
+                            <i class="fas fa-sort sort-icon ui-sortable-handle"></i>
+                            <a href="/cms/catalog/products?Id=3" class="category-link" title="Гердани"><span class="cat-link-name fw-semibold">Гердани</span></a>
+                            <a href="/cms/catalog/details?Id=&amp;editId=3" class="btn btn-primary btn-sm settings-icon" title="Редакция на категория">Редакция</a>
+                            <i class="fas fa-eye view-icon" title="Направи невидима"></i>
 
-        <div class="shop-stat">
-            <div class="shop-items">
-                <span>Продукти в магазина</span>
-                <div class="shop-product">
-                    <div class="info">
-                        <span>37</span>
-                        <a href="">Към каталога</a>
-                    </div>
-                </div>
+                        </div>
+
+
+                    </li>
+                    <li id="cat_2" class="cat-list-item sortable-item opened">
+                        <div class="link-wrapper  active " data-id="2">
+                            <i class="fas fa-sort sort-icon ui-sortable-handle"></i>
+                            <a href="/cms/catalog/products?Id=2" class="category-link" title="Гоблени"><span class="cat-link-name fw-semibold">Гоблени</span></a>
+                            <a href="/cms/catalog/details?Id=&amp;editId=2" class="btn btn-primary btn-sm settings-icon" title="Редакция на категория">Редакция</a>
+                            <i class="fas fa-eye view-icon" title="Направи невидима"></i>
+
+                        </div>
+                        <ul class="sortable-list ui-sortable">
+                        </ul>
+                        <a href="/cms/catalog/details?Id=2&amp;editId=0&amp;parentId=2" class="btn-add-new-small">
+                            Добави подкатегория </a>
+                    </li> -->
+
+                </ul>
             </div>
-            <div class="new-orders">
-                <span>Нови продукти</span>
-                <div class="orders-info">
-                    <div class="info">
-                        <span>0</span>
-                        <a href="">Към поръчки</a>
-                    </div>
+            <form class="add-new-category my-3 me-2 pt-4" id="addNewCategory" method="POST">
+                <div class="input-group">
+                    <input type="text" class="form-control fst-italic new-category" placeholder="Име на категорията" name="newCategory" data-validation="presence">
+                    <input class="btn btn-primary btn-sm" type="submit" value="Създай">
                 </div>
-            </div>
+            </form>
+        </aside>
+
+        <div class="items-container">
+            <a href="/cms/product/details?catId=3" class="btn-add-new">
+                <div class="add-product">
+                    добави продукт
+                </div>
+            </a>
         </div>
-    </section>
+    </div>
 
 </body>
 

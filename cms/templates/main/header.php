@@ -5,7 +5,7 @@
         <div class="logo">
             <div class="logo-img">
                 <a href="/">
-                    <img src="cms/imgs/logo2.jpg">
+                    <img src="cms/templates/main/imgs/logo2.jpg">
                 </a>
             </div>
             <div class="head-contacts">

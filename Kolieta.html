@@ -1,0 +1,72 @@
+<?php
+        require_once 'cms/config/db-config/db_connect.php';
+        ?>
+        <!DOCTYPE html>
+        <html lang='en'>
+        
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <meta name='description' content='Онлайн магазин за гоблени и гердани.  Бърза и сигурна доставка. Ниски цени. Поръчай сега.' />
+            <meta property='og:title' content='Колиета' />
+            <meta property='og:site_name' content='Ръчно изработени гердани и гоблени! - Детелина и Вие | detelinaivie.com' />
+            <meta property='og:description' content='Онлайн магазин за гоблени и гердани.  Бърза и сигурна доставка. Ниски цени. Поръчай сега.' />
+            <link rel='stylesheet' href='cms/templates/main/css/main.css' />
+            <script src='https://kit.fontawesome.com/7f6d4e14e7.js' crossorigin='anonymous'></script>
+            <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
+            <title>Колиета</title>
+        </head>
+        
+        <body>
+            <div class='main'>
+                <?php
+                require_once 'cms	emplates\main\header.php';
+                ?>
+        
+                <div class='galeryContainer'>
+        
+                    <div class='wrapper'>
+                        <img class='galeryImage' src='/cms/templates/main/imgs/hobi-gobleni_3_1920x500.jpg'>
+                        <img class='galeryImage' src='/cms/templates/main/imgs/goblen_1_1920x500.jpg'>
+                        <img class='galeryImage' src='/cms/templates/main/imgs/ezgif.com-resize.jpg'>
+                    </div>
+        
+                </div>
+        
+                <div class='gs-grid-wrap gs-anim-block animated'>
+                    <div class='gs-grid-item with-hover gs-elem done' data-pid='31'>
+                        <div class='gs-item-data'>
+                            <div class='gs-item-image'>
+                                <span class='gs-tags'>
+                                </span>
+                                <a href='/gerdan-zvezda.html' class='gs-item-view gs-single-view'>
+                                    <img src='/media/8/43.png' alt='Гердан Звезда'>
+                                </a>
+                                <a data-quick-view-btn='' href='#' onclick='QuickView.showInfo(event, this)' class='gs-qw-button' data-id='31'>
+                                    <span class='icon-ico_search'></span>
+                                    <em>Бърз преглед</em>
+                                </a>
+                            </div>
+                            <div class='gs-item-text'>
+                                <a href='/gerdan-zvezda.html'>
+                                    Гердан Звезда
+                                </a>
+                                <div class='gs-item-price'>
+                                    <a href='/gerdan-zvezda.html'>
+                                        <span class='gs-new-price'>22,00 лв.</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>        
+                </div>
+                <button id=test>test</button>
+                <?php
+                require_once ''cms/templates/mainfooter.php';
+                ?>
+            </div>
+        </body>
+        
+        <script src='/cms/templates/main/js/main.js' type='module'></script>
+        
+        </html>
