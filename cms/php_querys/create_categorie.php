@@ -17,7 +17,8 @@ function createCategorie()
         product_image VARCHAR(255) NOT NULL,
         product_page_url VARCHAR(255) NOT NULL,
         product_meta VARCHAR(255) NOT NULL,
-        product_seo_description VARCHAR(255) NOT NULL
+        product_seo_description VARCHAR(255) NOT NULL,
+        visible BOOLEAN
     )";
 
         if (mysqli_query($conn, $table)) {

@@ -10,15 +10,6 @@
 
 </head>
 
-<?php
-if(isset($_POST)){
-    $data = file_get_contents("php://input");
-
-    $jsonData = json_decode($data);
-
-    echo $jsonData;
-}
-?>
 <body>
     <div class="main-container">
         <div class="header">
@@ -192,7 +183,7 @@ if(isset($_POST)){
     </div>
 
     <div class="products-main-container">
-        <aside class="category-tree-wrapper " id="categoryTreeWrapper">
+        <aside class="category-tree-wrapper" id="categoryTreeWrapper">
             <h2 class="catalog-title">Категории</h2>
             <div class="category-tree" id="categoryTree">
 
@@ -203,44 +194,37 @@ if(isset($_POST)){
                         </div>
                     </li>
 
-                    <!--        <li id="cat_3" class="cat-list-item sortable-item ">
-                        <div class="link-wrapper  " data-id="3">
-                            <i class="fas fa-sort sort-icon ui-sortable-handle"></i>
-                            <a href="/cms/catalog/products?Id=3" class="category-link" title="Гердани"><span class="cat-link-name fw-semibold">Гердани</span></a>
-                            <a href="/cms/catalog/details?Id=&amp;editId=3" class="btn btn-primary btn-sm settings-icon" title="Редакция на категория">Редакция</a>
-                            <i class="fas fa-eye view-icon" title="Направи невидима"></i>
+                    <?php
+                    require_once '/xampp/htdocs/shop/cms/config/db-config/db_connect.php';
 
+                    $select = "SELECT * FROM categories_name";
+                    $query = mysqli_query($conn, $select);
+
+                    while ($rows = mysqli_fetch_assoc($query)) {
+                        echo "<li id='cat_$rows[id]' class='cat-list-item sortable-item'>
+                        <div class='link-wrapper  'data-id='$rows[id]'>
+                            <a href='/cms/catalog/products?Id=$rows[id]' class='category-link' title='$rows[name]'><span class='cat-link-name fw-semibold'>$rows[name]</span></a>
+                            <a href='/cms/catalog/details?Id=&amp;editId=$rows[id]' class='btn btn-primary btn-sm settings-icon' title='Редакция на категория'>Редакция</a>
+                            <i class='fas fa-eye view-icon' title='Направи невидима'></i>
                         </div>
-
-
-                    </li>
-                    <li id="cat_2" class="cat-list-item sortable-item opened">
-                        <div class="link-wrapper  active " data-id="2">
-                            <i class="fas fa-sort sort-icon ui-sortable-handle"></i>
-                            <a href="/cms/catalog/products?Id=2" class="category-link" title="Гоблени"><span class="cat-link-name fw-semibold">Гоблени</span></a>
-                            <a href="/cms/catalog/details?Id=&amp;editId=2" class="btn btn-primary btn-sm settings-icon" title="Редакция на категория">Редакция</a>
-                            <i class="fas fa-eye view-icon" title="Направи невидима"></i>
-
-                        </div>
-                        <ul class="sortable-list ui-sortable">
-                        </ul>
-                        <a href="/cms/catalog/details?Id=2&amp;editId=0&amp;parentId=2" class="btn-add-new-small">
-                            Добави подкатегория </a>
-                    </li> -->
+                    </li>";
+                    }
+                    ?>
 
                 </ul>
             </div>
+
             <form class="add-new-category my-3 me-2 pt-4" id="addNewCategory" method="POST">
                 <div class="input-group">
                     <input type="text" class="form-control fst-italic new-category" placeholder="Име на категорията" name="newCategory" data-validation="presence">
-                    <input class="btn btn-primary btn-sm" type="submit" value="Създай">
+                    <input class="btn btn-primary btn-sm" id="btn-sm" type="submit" value="Създай">
                 </div>
             </form>
         </aside>
 
-        <div class="items-container">
-            <a href="/cms/product/details?catId=3" class="btn-add-new">
-                <div class="add-product">
+        <div class='items-container'>
+            <a href='/cms/product/details?catId=0' class='btn-add-new'>
+                <div class='add-product'>
                     добави продукт
                 </div>
             </a>

@@ -31,6 +31,22 @@ function searchBarToogle() {
     });
 }
 
+function setTitle(){
+
+}
+
+function setCategoriesElement(){
+
+}
+
+function setFooterNavElements(){
+
+}
+
+function setHeaderMenuElements(){
+
+}
+
 menuToogle();
 searchBarToogle();
 

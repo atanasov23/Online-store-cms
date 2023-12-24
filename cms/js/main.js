@@ -1,43 +1,43 @@
 function createCategorie() {
     const form = document.getElementById("addNewCategory");
 
-    form.addEventListener("submit", function (event) {
-        event.preventDefault();
+    if (form) {
 
-        const formData = new FormData(form);
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
 
-        const inputValue = formData.get("newCategory");
+            const formData = new FormData(form);
 
-        fetch("/cms/php_querys/create_categorie.php", {
-            method: "POST",
-            "Content-Type": "aplication/json",
-            body: JSON.stringify(inputValue),
-        })
-            .then((a) => a.text())
-            .then((a) => console.log(a));
-    });
+            const inputValue = formData.get("newCategory");
+
+            fetch("/cms/php_querys/create_categorie.php", {
+                method: "POST",
+                "Content-Type": "aplication/json",
+                body: JSON.stringify(inputValue),
+            })
+                .then((a) => a.text())
+                .then((a) => console.log(a));
+        });
+    }
 }
 
 function displayProductsFromCategory() {
 
-    const addBtn = document.getElementsByClassName('category-link')[0];
+    const elements = document.getElementsByClassName('category-link');
 
-    addBtn.addEventListener('click', function (a) {
-        a.preventDefault();
-        window.history.pushState('test', 'add', '?id=2');
+    for (let btn of elements) {
 
-        const urlParams = new URLSearchParams(window.location.search);
-        const id = urlParams.get('id');
+        btn.addEventListener('click', function (a) {
+            a.preventDefault();
+            window.history.pushState('id', 'addId', `?id=${btn.getAttribute('href')[btn.getAttribute('href').length - 1]}`);
 
-        fetch("/cms/catalog/products.php", {
-            method: "POST",
-            "Content-Type": "aplication/json",
-            body: JSON.stringify(id),
-        })
-            .then((a) => a.text())
-            .then((a) => console.log(a));
-    });
+            const id = btn.getAttribute('href')[btn.getAttribute('href').length - 1];
 
+            const btnAddNew = document.getElementsByClassName('btn-add-new')[0];
+
+            btnAddNew.setAttribute('href', `/cms/product/details?catId=${id}`);
+        });
+    }
 }
 
 createCategorie();
